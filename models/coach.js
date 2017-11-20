@@ -15,7 +15,16 @@ const CoachSchema = new Schema({
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    /*validate: {
+      validator(email) {
+        // eslint-disable-next-line max-len
+        const emailRegex = /^[-a-z0-9%S_+]+(\.[-a-z0-9%S_+]+)*@(?:[a-z0-9-]{1,63}\.){1,125}[a-z]{2,63}$/i;
+        return emailRegex.test(email);
+      },
+      message: '{VALUE} is not a valid email.',
+    },*/
+    lowercase: true
   },
   birthdate: Date,
   position: {

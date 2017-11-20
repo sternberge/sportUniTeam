@@ -7,11 +7,6 @@ const CollegeSchema = new Schema({
     required: true,
     unique: true
   },
-  /*address : {
-    street: String,
-    city: String,
-    zipCode: String
-  },*/
   address: [String],
   division: {
     type: String,
@@ -27,11 +22,10 @@ const CollegeSchema = new Schema({
     required: true,
     default: 0
   },
-  coaches: [{
+  /*coaches: [{
     type: Schema.Types.ObjectId,
     ref: 'coach'
-  }]
-
+  }]*/
 });
 
 const College = mongoose.model('college', CollegeSchema);

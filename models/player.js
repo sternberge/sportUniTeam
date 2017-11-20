@@ -15,7 +15,16 @@ const PlayerSchema = new Schema ({
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    lowercase: true,
+    /*validate: {
+      validator(email) {
+        // eslint-disable-next-line max-len
+        const emailRegex = /^[-a-z0-9%S_+]+(\.[-a-z0-9%S_+]+)*@(?:[a-z0-9-]{1,63}\.){1,125}[a-z]{2,63}$/i;
+        return emailRegex.test(email);
+      },
+      message: '{VALUE} is not a valid email.',
+    }*/
   },
   password: {
     type: String,
@@ -40,9 +49,6 @@ const PlayerSchema = new Schema ({
   },
   college: {
     type: Schema.Types.ObjectId, ref: 'college'
-  },
-  college: {
-    type: Schema.Types.ObjectId, ref: 'team'
   },
 });
 
