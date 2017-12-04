@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const CollegeSchema = require('./college');
 const Schema = mongoose.Schema;
 
-const CoachSchema = new Schema({
-  firstName: {
+const UserSchema = new Schema ({
+  firstName : {
     type: String,
     required: true
   },
@@ -15,6 +16,7 @@ const CoachSchema = new Schema({
     type: String,
     required: true,
     unique: true,
+    lowercase: true,
     /*validate: {
       validator(email) {
         // eslint-disable-next-line max-len
@@ -22,26 +24,21 @@ const CoachSchema = new Schema({
         return emailRegex.test(email);
       },
       message: '{VALUE} is not a valid email.',
-    },*/
-    lowercase: true
-  },
-  birthdate: Date,
-  position: {
-    type: String,
-    enum: ['Head Coach','Assistant Coach'],
-    default: 'Assistant Coach',
-    required: true
+    }*/
   },
   password: {
     type: String,
     required: true
   },
+  birthdate: Date,
+
   gender: {
     type: String,
     enum: ['Man','Woman'],
     required: true
-  }
+  },
+
 });
 
-const Coach = mongoose.model('coach', CoachSchema);
-module.exports = Coach;
+const User = mongoose.model('user', UserSchema);
+module.exports = User;

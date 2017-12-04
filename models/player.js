@@ -31,7 +31,7 @@ const PlayerSchema = new Schema ({
     required: true
   },
   birthdate: Date,
-  ranked : Number,
+
   status: {
     type: String,
     enum: ['active','graduated','quit','transferred','deleted','duplicate'],
@@ -47,9 +47,8 @@ const PlayerSchema = new Schema ({
     enum: ['Man','Woman'],
     required: true
   },
-  college: {
-    type: Schema.Types.ObjectId, ref: 'college'
-  },
+  team: { type: Schema.Types.ObjectId, ref: 'team' },
+
 });
 
 const Player = mongoose.model('player', PlayerSchema);

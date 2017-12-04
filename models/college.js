@@ -22,10 +22,10 @@ const CollegeSchema = new Schema({
     required: true,
     default: 0
   },
-  /*coaches: [{
-    type: Schema.Types.ObjectId,
-    ref: 'coach'
-  }]*/
+  phone: Number,
+  fax: String,
+  mascot: String,
+
 });
 
 const College = mongoose.model('college', CollegeSchema);

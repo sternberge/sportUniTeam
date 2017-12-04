@@ -15,7 +15,9 @@ describe('College Controller Test', () => {
     .send({name : 'ecetoto1',
     division: 'Division 1 Men',
     conference: 'conference',
-    ranking: 1})
+    ranking: 1,
+    phone: 02457889456,
+    mascot: 'ours'})
     .end(() =>{
 
       done();
