@@ -2,7 +2,7 @@ const Coach = require('../models/Coach');
 
 module.exports = {
   findCoachById (req, res) {
-    Coach.findById(req.params.college_id, (err,coach)=>{
+    Coach.findById(req.params.coach_id, (err,coach)=>{
       if (err)
         res.send(err);
       res.json(coach);

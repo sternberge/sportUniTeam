@@ -11,8 +11,16 @@ const TeamSchema = new Schema({
   coaches: [{
     type: Schema.Types.ObjectId,
     ref: 'coach'
-  }]
-
+  }],
+  budget: {
+    totalBudget: Number,
+    spentBudget: Number,
+    expenses: [{ category: String,
+                 description: String,
+                 amount: Number,
+                 ticketUrl: String
+               }]
+  }
 });
 
 const Team = mongoose.model('team', TeamSchema);

@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const CollegeSchema = require('./college');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema ({
@@ -37,6 +36,10 @@ const UserSchema = new Schema ({
     enum: ['Man','Woman'],
     required: true
   },
+  userType: {
+    type: String,
+    enum: ['Normal User','Coach','Player']
+  }
 
 });
 

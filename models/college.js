@@ -25,6 +25,8 @@ const CollegeSchema = new Schema({
   phone: Number,
   fax: String,
   mascot: String,
+  conference: { type: Schema.Types.ObjectId, ref: 'conference' },
+  league: { type: Schema.Types.ObjectId, ref: 'league' }
 
 });
 
